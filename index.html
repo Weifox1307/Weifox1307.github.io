@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Роман Беков — Android-разработчик</title>
+<meta name="description" content="Портфолио Android-разработчика: Kotlin, Jetpack Compose, BLE. Приложения в RuStore.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#050506;--ink:#F4EFEC;--mut:#A8A09D;--line:rgba(255,255,255,.11);--route:#FF2E3A}
+*{box-sizing:border-box}
+@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;color:var(--ink);font:400 17px/1.65 Onest,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg) radial-gradient(60% 40% at 85% 0,rgba(255,40,50,.16),transparent 70%) no-repeat}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9;opacity:.1;mix-blend-mode:overlay;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--route);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+.sec{margin-top:88px}
+header{position:sticky;top:0;z-index:8;backdrop-filter:blur(14px);background:rgba(5,5,6,.55)}
+.bar{max-width:1160px;margin:0 auto;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:600;text-decoration:none}
+.mark{width:22px;height:22px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#FF8A4F,#E0161F 60%,#5A0008)}
+.pill{display:none;gap:4px;padding:5px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.04)}
+.pill a{padding:7px 16px;border-radius:999px;text-decoration:none;font-size:.92rem;color:var(--mut)}
+.pill a:hover{color:var(--ink);background:rgba(255,255,255,.08)}
+@media(min-width:800px){.pill{display:flex}}
+.lang{display:flex;border-radius:999px;overflow:hidden;border:1px solid var(--line)}
+.lang button{font:600 13px Onest,sans-serif;padding:7px 14px;border:0;background:none;color:var(--ink);cursor:pointer}
+.lang button[aria-pressed=true]{background:#D9141D;color:#fff}
+h1,h2,h3,h4{margin:0;font-weight:300;letter-spacing:-.025em;line-height:1.08}
+.hero{position:relative;overflow:hidden;padding:48px 0 72px}
+#heat{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;-webkit-mask-image:linear-gradient(#000 72%,transparent);mask-image:linear-gradient(#000 72%,transparent)}
+.hg{position:relative;display:grid;gap:32px}
+@media(min-width:900px){.hg{grid-template-columns:1fr 320px;min-height:600px}}
+h1{display:inline-block;font-size:clamp(2.5rem,7.2vw,5.4rem);margin:22px 0 20px;background:linear-gradient(90deg,var(--ink) 45%,#FF4A3D);-webkit-background-clip:text;background-clip:text;color:transparent}
+.badge{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);background:rgba(255,255,255,.05);border-radius:999px;padding:6px 16px;font-size:.9rem}
+.badge::before{content:"";width:9px;height:9px;border-radius:50%;background:#1FAF63}
+.tag{max-width:30em;color:var(--mut);font-size:1.1rem;margin:0 0 26px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:13px 26px;border-radius:999px;font-weight:600;text-decoration:none;border:1px solid var(--line);background:rgba(255,255,255,.06)}
+.btn:hover{border-color:rgba(255,255,255,.35)}
+.btn.main{background:linear-gradient(180deg,#F0262E,#C8101A);border-color:transparent;color:#fff;box-shadow:0 0 30px rgba(255,46,58,.45)}
+.btn.main:hover{filter:brightness(1.12)}
+dl{margin:0}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:44px 0 0;max-width:640px}
+.stats>div,.card{position:relative;border:1px solid var(--line);background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.02) 40%,rgba(255,40,50,.05))}
+.stats>div{padding:16px 18px;border-radius:20px;backdrop-filter:blur(6px)}
+.stats dt{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:300;line-height:1}
+.stats dd{margin:8px 0 0;color:var(--mut);font-size:.85rem;line-height:1.35}
+.card{border-radius:28px;padding:28px;overflow:hidden}
+.card::before{content:"";position:absolute;left:12%;right:12%;top:-1px;height:1px;background:linear-gradient(90deg,transparent,rgba(255,130,115,.95),transparent)}
+.card h3{font-size:1.7rem;margin-bottom:10px}
+.card h4{font-size:1rem;font-weight:500;color:var(--mut);letter-spacing:0;margin-bottom:4px}
+.card p{margin:8px 0}
+.meta{color:var(--mut);font-size:.92rem}
+.pl{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0;padding:0}
+.pl i{font-style:normal;font-size:.85rem;padding:5px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.05)}
+.st{display:inline-block;border:1px solid #FF5A4F;color:#FF5A4F;border-radius:999px;padding:0 10px;font-size:.78rem;font-weight:600;margin-left:8px;vertical-align:middle;letter-spacing:0}
+.go{display:inline-block;margin-top:14px;font-weight:600;color:#FF5A4F;text-decoration:none}
+.go:hover{text-decoration:underline}
+.about{display:grid;gap:36px;align-items:center}
+.about p{font-size:clamp(1.5rem,3.4vw,2.5rem);font-weight:300;letter-spacing:-.02em;line-height:1.22;margin:0}
+.about em{font-style:normal;color:#FF3B3B}
+.me{position:relative;max-width:320px}
+.me:empty{display:none}
+.me img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:24px;filter:grayscale(1) contrast(1.15)}
+.me::after{content:"";position:absolute;inset:0;border-radius:24px;background:linear-gradient(200deg,rgba(255,46,58,.6),transparent 65%);mix-blend-mode:screen}
+@media(min-width:800px){.about{grid-template-columns:1fr 1.4fr}.about p{grid-column:2}}
+h2{font-size:clamp(2rem,5vw,3.4rem);margin-bottom:28px}
+.bento{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.c3{grid-column:span 3}.c4{grid-column:span 4}.c5{grid-column:span 5}.c6{grid-column:span 6}.c7{grid-column:span 7}.c12{grid-column:span 12}
+@media(max-width:900px){.c3{grid-column:span 6}.c4,.c5,.c6,.c7{grid-column:span 12}}
+@media(max-width:560px){.c3{grid-column:span 12}}
+.shots{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 0 10px;margin:14px 0}
+.shots:empty{display:none}
+.shots img{flex:none;height:min(420px,70vw);width:auto;scroll-snap-align:start;border-radius:22px;border:1px solid var(--line)}
+.works{columns:3 230px;column-gap:16px}
+.works img{width:100%;height:auto;margin:0 0 16px;break-inside:avoid;border-radius:14px;display:block;background:#1a1416}
+.works img,.shots img{cursor:zoom-in}
+dialog{border:0;padding:0;background:none;max-width:96vw;max-height:96vh;overflow:visible}
+dialog::backdrop{background:rgba(0,0,0,.92)}
+dialog img{display:block;max-width:96vw;max-height:94vh;border-radius:8px;cursor:zoom-out}
+.links{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0 14px}
+.id{align-self:start;padding:20px 20px 24px;backdrop-filter:blur(12px);background:linear-gradient(160deg,rgba(255,255,255,.09),rgba(255,255,255,.03) 45%,rgba(255,40,50,.08))}
+.id h3{font-size:1.6rem;margin-bottom:6px}
+.ph{position:relative;aspect-ratio:4/5;border-radius:20px;overflow:hidden;margin-bottom:18px;display:grid;place-items:center;background:radial-gradient(80% 60% at 70% 20%,rgba(255,46,58,.55),#120708 70%)}
+.ph::after{content:"";position:absolute;inset:0;background:linear-gradient(200deg,rgba(255,46,58,.45),transparent 60%);mix-blend-mode:screen}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.15)}
+.mono{font-size:5.5rem;font-weight:200;letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.75)}
+footer{padding:56px 0;color:var(--mut);font-size:.9rem}
+</style>
+</head>
+<body>
+<header><div class="bar">
+<a class="brand" href="#top"><span class="mark"></span><span data-i="nm">Роман Беков</span></a>
+<nav class="pill"><a href="#apps" data-i="h_apps">Приложения</a><a href="#design" data-i="h_design">Дизайн</a><a href="#stack" data-i="h_stack">Стек</a><a href="#contact" data-i="h_contact">Контакты</a></nav>
+<div class="lang" role="group" aria-label="Language"><button data-l="ru" aria-pressed="true">RU</button><button data-l="en" aria-pressed="false">EN</button></div>
+</div></header>
+<main id="top">
+<section class="hero"><canvas id="heat" aria-hidden="true"></canvas>
+<div class="wrap hg">
+<div>
+<span class="badge" data-i="badge">Открыт к предложениям</span>
+<h1 data-i="h1">Нативные Android-приложения<br>от макета до релиза</h1>
+<p class="tag" data-i="tag">Делаю нативные Android-приложения: от макета в Figma до релиза в RuStore.</p>
+<div class="cta"><a class="btn main" href="https://t.me/Mr_Weifox" data-i="b_tg">Написать в Telegram</a><a class="btn" href="https://github.com/Weifox1307">GitHub</a></div>
+<dl class="stats">
+<div><dt>2+</dt><dd data-i="s1">года продуктовой разработки</dd></div>
+<div><dt>3</dt><dd data-i="s2">выпущенных приложения</dd></div>
+<div><dt>4</dt><dd data-i="s3">года в Figma, около 100 работ</dd></div>
+</dl>
+</div>
+<aside class="card id"><div class="ph"><span class="mono" aria-hidden="true">RB</span><img src="assets/me.webp" alt="Роман Беков" onerror="this.remove()"></div>
+<h3 data-i="nm">Роман Беков</h3>
+<p class="meta"><span data-i="role">Android-разработчик</span>, <span data-i="loc">Нижний Новгород</span></p>
+<p class="pl" data-s>Kotlin, Jetpack Compose, Clean Architecture, BLE</p>
+<a class="go" href="https://t.me/Mr_Weifox">@Mr_Weifox</a></aside>
+</div></section>
+
+<section class="wrap about sec">
+<p data-i="stmt">Я проектирую и выпускаю <em>Android-приложения</em>: от <em>архитектуры</em> и интерфейса до <em>работы с датчиками</em> и релиза в RuStore.</p></section>
+
+<section class="wrap sec" id="apps"><h2 data-i="h_apps">Приложения</h2>
+<div class="bento">
+<article class="card c7"><h3>Weirun</h3>
+<p data-i="p1d">Приложение для бегунов. Читает пульс с внешних датчиков по Bluetooth Low Energy, хранит тренировки на устройстве и синхронизирует их с сервером. Есть система достижений и собственные UI-компоненты.</p>
+<p data-i="p1x">Архитектуру и интерфейс спроектировал с нуля: Compose и Clean Architecture, Supabase через REST, кэш на Room.</p>
+<p class="pl" data-s>Kotlin, Jetpack Compose, Clean Architecture, BLE, Room, Supabase</p>
+<div class="shots"><img src="assets/shots/weirun-1.webp" alt="Weirun 1" loading="lazy" onerror="this.remove()"><img src="assets/shots/weirun-2.webp" alt="Weirun 2" loading="lazy" onerror="this.remove()"><img src="assets/shots/weirun-3.webp" alt="Weirun 3" loading="lazy" onerror="this.remove()"><img src="assets/shots/weirun-4.webp" alt="Weirun 4" loading="lazy" onerror="this.remove()"></div>
+<p class="meta" data-i="p1m">Релиз в RuStore, август 2026</p><a class="go" href="https://www.rustore.ru/catalog/app/com.weifox.appforrun" data-i="rs">Открыть в RuStore</a></article>
+<article class="card c5"><h3>5 вёрст</h3>
+<p data-i="p2d">Приложение для участников и волонтёров бегового сообщества. Адаптивный интерфейс по макетам из Figma, быстрые списки и интеграция с сервисами учёта участников и волонтёрских позиций.</p>
+<p class="pl" data-s>Kotlin, Figma, RuStore</p>
+<div class="shots"><img src="assets/shots/5verst-1.webp" alt="5 verst 1" loading="lazy" onerror="this.remove()"><img src="assets/shots/5verst-2.webp" alt="5 verst 2" loading="lazy" onerror="this.remove()"><img src="assets/shots/5verst-3.webp" alt="5 verst 3" loading="lazy" onerror="this.remove()"><img src="assets/shots/5verst-4.webp" alt="5 verst 4" loading="lazy" onerror="this.remove()"></div>
+<p class="meta" data-i="p2m">Релиз в RuStore, апрель 2026. Поддерживаю и развиваю</p><a class="go" href="https://www.rustore.ru/catalog/app/com.example.a5verst" data-i="rs">Открыть в RuStore</a></article>
+<article class="card c6"><h3>Trailprint <span class="st" data-i="wip">в разработке</span></h3>
+<p data-i="p3d">Десктопное приложение для бегунов: GPX-треки превращаются в тепловую карту. Чем чаще вы бегали по маршруту, тем ярче он горит, а редкие места остаются тусклыми.</p>
+<p class="pl" data-s>Compose Desktop, MapLibre, GPX, heatmap</p></article>
+<article class="card c6"><h3>Tapless <span class="st" data-i="con">проект</span></h3>
+<p data-i="p4d">Голосовое управление сторонними приложениями без касаний экрана через AccessibilityService. Для людей с ограниченной подвижностью и для тех, у кого заняты руки.</p>
+<p class="pl" data-s>Kotlin, Coroutines, StateFlow, AccessibilityService</p></article>
+</div></section>
+
+<section class="wrap sec works-sec" id="design"><h2 data-i="h_design">Дизайн</h2>
+<p class="meta" data-i="dtxt">Figma, 4 года и около 100 разнообразных работ: интерфейсы, прототипы, авторское оформление.</p>
+<div class="works">
+<img src="assets/works/01.webp" alt="" loading="lazy" onerror="this.remove()"><img src="assets/works/02.webp" alt="" loading="lazy" onerror="this.remove()"><img src="assets/works/03.webp" alt="" loading="lazy" onerror="this.remove()"><img src="assets/works/04.webp" alt="" loading="lazy" onerror="this.remove()"><img src="assets/works/05.webp" alt="" loading="lazy" onerror="this.remove()"><img src="assets/works/06.webp" alt="" loading="lazy" onerror="this.remove()">
+</div></section>
+
+<section class="wrap sec" id="more"><h2 data-i="h_more">Кроме кода</h2>
+<div class="bento">
+<article class="card c4"><p data-i="m1">Выпустил на Литрес книгу по мобильной разработке в эпоху нейросетей.</p></article>
+<article class="card c4"><p data-i="m2">Статья о Weirun и его BLE-модуле заняла первое место в категории «Разработка» на VC.ru.</p></article>
+<article class="card c4"><p data-i="m3">Провёл лекторий по мобильной разработке для школьников. Зовут с онлайн-лекциями в другие города.</p></article>
+</div></section>
+
+<section class="wrap sec" id="stack"><h2 data-i="h_stack">Стек</h2>
+<div class="bento">
+<div class="card c3"><h4 data-i="k1">Языки</h4><p class="pl"><i>Kotlin</i><i data-i="javab">Java (базовый)</i></p></div>
+<div class="card c3"><h4>UI</h4><p class="pl" data-s>Jetpack Compose, Material Design 3, XML Layouts, Custom Views</p></div>
+<div class="card c3"><h4 data-i="k3">Архитектура</h4><p class="pl" data-s>Clean Architecture, MVVM, MVI, Multi-module, SOLID</p></div>
+<div class="card c3"><h4 data-i="k4">Асинхронность и DI</h4><p class="pl" data-s>Coroutines, StateFlow, SharedFlow, Hilt, Dagger 2</p></div>
+<div class="card c3"><h4 data-i="k5">Данные и сеть</h4><p class="pl" data-s>Room, SQLite, Supabase, REST API, Retrofit 2, OkHttp</p></div>
+<div class="card c3"><h4 data-i="k6">Железо</h4><p class="pl"><i>BLE</i><i data-i="k6v">внешние датчики</i></p></div>
+<div class="card c3"><h4 data-i="k7">Инструменты</h4><p class="pl" data-s>Android Studio, Gradle, Git, Figma, RuStore Console, AppGallery</p></div>
+</div></section>
+
+<section class="wrap sec" id="contact"><div class="card c12"><h2 data-i="h_contact">Контакты</h2>
+<p data-i="ctxt">Быстрее всего ответ приходит в Telegram.</p>
+<div class="links"><a class="btn main" href="https://t.me/Mr_Weifox">Telegram</a><a class="btn" href="https://github.com/Weifox1307">GitHub</a><a class="btn" id="mail" href="#contact">Email</a></div>
+<p class="meta" data-i="loc">Нижний Новгород</p></div></section>
+
+<div class="wrap"><footer>© 2026 <span data-i="nm">Роман Беков</span></footer></div>
+</main>
+<dialog id="lb" aria-label="Preview"><img alt=""></dialog>
+<script>
+const E={h1:"Native Android apps<br>from mock-up to release",stmt:"I design and ship <em>Android apps</em>: from <em>architecture</em> and UI to <em>hardware sensors</em> and a RuStore release.",title:"Roman Bekov — Android Developer",role:"Android Developer",tag:"I build native Android apps, from a Figma mock-up to a RuStore release.",badge:"Open to opportunities",b_tg:"Message on Telegram",s1:"years of product development",s2:"apps released",s3:"years in Figma, about 100 works",h_apps:"Apps",p1d:"A running app. It reads heart rate from external sensors over Bluetooth Low Energy, stores workouts on the device and syncs them to the server. It has an achievements system and custom UI components.",p1x:"I designed the architecture and UI from scratch: Compose and Clean Architecture, Supabase over REST, Room cache.",p1m:"Released on RuStore, August 2026",rs:"Open on RuStore",p2d:"An app for participants and volunteers of a running community. A responsive UI built from Figma mock-ups, fast lists, and integration with the services that track participants and volunteer roles.",p2m:"Released on RuStore, April 2026. Maintained and still evolving",wip:"in progress",con:"concept",p3d:"A desktop app for runners: GPX tracks turn into a heat map. The more often you run a route, the brighter it glows, while rarely visited places stay dim.",p4d:"Voice control of third-party apps without touching the screen, built on AccessibilityService. Made for people with limited mobility and for anyone whose hands are busy.",h_design:"Design",dtxt:"Figma for 4 years, about 100 varied works: interfaces, prototypes, original artwork.",h_more:"Beyond code",m1:"Published a book on mobile development in the age of neural networks on Litres.",m2:"My article about Weirun and its BLE module took first place in the Development category on VC.ru.",m3:"Gave a mobile development lecture series for schoolchildren, and I’m invited to give online lectures in other cities.",h_stack:"Stack",k1:"Languages",javab:"Java (basic)",k3:"Architecture",k4:"Async and DI",k5:"Data and network",k6:"Hardware",k6v:"external sensors",k7:"Tools",h_contact:"Contact",ctxt:"Telegram is the quickest way to reach me.",loc:"Nizhny Novgorod, Russia",nm:"Roman Bekov"};
+const els=[...document.querySelectorAll("[data-i]")];
+els.forEach(e=>e.dataset.ru=e.innerHTML);
+const ruTitle=document.title;
+function set(l){
+  document.documentElement.lang=l;
+  els.forEach(e=>{e.innerHTML=l==="en"?(E[e.dataset.i]??e.dataset.ru):e.dataset.ru});
+  document.title=l==="en"?E.title:ruTitle;
+  document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.l===l)));
+  try{localStorage.setItem("lang",l)}catch(_){}
+}
+let l=null;
+try{l=localStorage.getItem("lang")}catch(_){}
+if(location.hash==="#en")l="en";else if(location.hash==="#ru")l="ru";
+if(!l)l=(navigator.language||"ru").toLowerCase().startsWith("ru")?"ru":"en";
+document.querySelectorAll(".lang button").forEach(b=>b.addEventListener("click",()=>set(b.dataset.l)));
+set(l);
+const m=["bekovroman0","gmail.com"].join("@"),a=document.getElementById("mail");
+a.href="mailto:"+m;a.textContent=m;
+addEventListener("load",()=>{if(!document.querySelector(".works img"))document.querySelector(".works-sec").remove()});
+const lb=document.getElementById("lb"),li=lb.querySelector("img");
+document.addEventListener("click",e=>{const i=e.target.closest(".works img,.shots img");if(i){li.src=i.src;li.alt=i.alt;lb.showModal()}else if(e.target===lb||e.target===li)lb.close()});
+
+document.querySelectorAll("[data-s]").forEach(e=>e.innerHTML=e.textContent.split(", ").map(t=>"<i>"+t+"</i>").join(""));
+(function(){
+const c=document.getElementById("heat"),x=c.getContext("2d"),h=c.parentElement,N=18,rm=matchMedia("(prefers-reduced-motion:reduce)").matches;
+let w,H,ox,oy,mx=0,my=0,run=true;
+const S=[...Array(N)].map((_,i)=>({a:.25*Math.PI+.62*Math.PI*i/(N-1),l:.55+.45*((i*37%11)/10),p:i*1.7}));
+function fit(){const d=Math.min(devicePixelRatio||1,2);w=h.clientWidth;H=h.clientHeight;c.width=w*d;c.height=H*d;x.setTransform(d,0,0,d,0,0);ox=w*(w>800?.7:.55);oy=H*.2;if(rm)draw(0)}
+function draw(t){
+x.clearRect(0,0,w,H);x.globalCompositeOperation="lighter";x.globalAlpha=1;
+const R=Math.min(w,H)*.3,g=x.createRadialGradient(ox+mx,oy+my,0,ox+mx,oy+my,R);
+g.addColorStop(0,"rgba(255,90,50,.55)");g.addColorStop(.5,"rgba(255,30,45,.18)");g.addColorStop(1,"rgba(255,30,45,0)");
+x.fillStyle=g;x.fillRect(0,0,w,H);
+for(const s of S){
+const L=H*.95*s.l,ca=Math.cos(s.a),sa=Math.sin(s.a),gr=x.createLinearGradient(ox,oy,ox+ca*L,oy+sa*L);
+gr.addColorStop(0,"rgba(255,140,40,.9)");gr.addColorStop(.35,"rgba(255,46,58,.55)");gr.addColorStop(1,"rgba(120,0,12,0)");
+x.strokeStyle=gr;
+for(const [lw,al] of [[6,.07],[1.2,.9]]){
+x.globalAlpha=al;x.lineWidth=lw;x.beginPath();
+for(let j=0;j<=40;j++){const u=j/40,v=Math.sin(u*7+t*.0006+s.p)*34*u+Math.sin(u*3-t*.0004+s.p*2)*18*u,
+px=ox+mx*(1-u)+ca*L*u-sa*v,py=oy+my*(1-u)+sa*L*u+ca*v;j?x.lineTo(px,py):x.moveTo(px,py)}
+x.stroke()}}
+x.globalAlpha=1}
+function loop(t){if(run)draw(t);requestAnimationFrame(loop)}
+fit();addEventListener("resize",fit);
+if(!rm){h.addEventListener("pointermove",e=>{const r=h.getBoundingClientRect();mx=(e.clientX-r.left-ox)*.06;my=(e.clientY-r.top-oy)*.06});
+new IntersectionObserver(e=>{run=e[0].isIntersecting}).observe(h);requestAnimationFrame(loop)}
+})();
+</script>
+</body>
+</html>
